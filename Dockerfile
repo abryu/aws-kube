@@ -9,9 +9,9 @@ RUN apt-get update && \
 
 USER argocd
 
-ARG GCS_PLUGIN_VERSION="0.10.0"
-ARG GCS_PLUGIN_REPO="https://github.com/hypnoglow/helm-s3.git"
+ARG AWS_PLUGIN_VERSION="0.10.0"
+ARG AWS_PLUGIN_REPO="https://github.com/hypnoglow/helm-s3.git"
 
-RUN helm plugin install ${GCS_PLUGIN_REPO} --version ${GCS_PLUGIN_VERSION}
+RUN helm plugin install ${AWS_PLUGIN_REPO} --version ${AWS_PLUGIN_VERSION}
 
 ENV HELM_PLUGINS="/home/argocd/.local/share/helm/plugins/"
